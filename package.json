@@ -10,12 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@metaplex-foundation/js": "^0.17.12",
     "@metaplex-foundation/mpl-token-metadata": "^2.13.0",
     "@solana-developers/helpers": "^2.3.0",
-    "@solana/spl-token": "^0.4.7",
+    "@solana/spl-token": "^0.3.7",
     "@solana/web3.js": "^1.94.0",
     "dotenv": "^16.4.5",
-    "esrun": "^3.2.26",
-    "typescript": "^5.5.3"
+    "esrun": "^3.2.26"
+  },
+  "devDependencies": {
+    "ts-node": "^10.8.0",
+    "typescript": "^4.6.4"
   }
 }
