@@ -1,0 +1,18 @@
+[package]
+name = "program"
+version = "0.1.0"
+edition = "2021"
+
+members = [
+    "programs/*"
+]
+
+[dependencies]
+solana-program = "1.9.9"
+
+[dev-dependencies]
+solana-sdk = "1.9.9"
+solana-program-test = "1.9.9"
+
+[lib]
+create-type = ["cdylib", "lib"]
