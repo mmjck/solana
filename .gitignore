@@ -1,2 +1,9 @@
-node_modules
-.env
+*/node_modules/
+
+target/
+
+
+keys.txt
+
+
+*/Cargo.lock
