@@ -2,7 +2,7 @@ import { payer, testWallet, connection, STATIC_PUBLICKEY } from "@/lib/var";
 
 
 import { explorerURL, printConsoleSeparator } from "@/lib/helpers";
-import { Keypair, LAMPORTS_PER_SOL, SystemProgram, TransactionMessage, VersionedTransaction } from "@solana/web3.js"
+import { SystemProgram, TransactionMessage, VersionedTransaction } from "@solana/web3.js"
 
 
 
@@ -52,6 +52,8 @@ const main = async () => {
         instructions: [
             createTestAccountIx,
             transferToStaticWalletIx,
+            transferToTestWalletIx,
+            transferToStaticWalletIx,
         ]
     }).compileToV0Message();
 
@@ -62,9 +64,7 @@ const main = async () => {
 
     const sig = await connection.sendTransaction(tx);
 
-
     printConsoleSeparator()
-
 
     console.log("Transaction completed.");
     console.log(explorerURL({ txSignature: sig }));
@@ -72,4 +72,11 @@ const main = async () => {
 }
 
 
-main()
+ main()
+ .then(() => {
+    process.exit(1)
+ })
+ .catch((err) => {
+    console.log(err);
+    process.exit(1)
+ })
